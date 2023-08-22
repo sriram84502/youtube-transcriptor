@@ -1,8 +1,11 @@
 const title = document.getElementById('vid-title')
 var videoContainer = document.getElementById('video-container');
 const desc = document.getElementById('vid-desc');
+var loader = document.getElementById('loader')
+loader.classList.add('container-none');
 
 async function yt() {
+    loader.classList.remove('container-none');
     const link = document.getElementById('input-field');
     const split_link = link.value.split('=');
     var youtubeVideoId = split_link[1];
@@ -20,16 +23,23 @@ async function yt() {
             'X-RapidAPI-Host': 'youtube-transcriptor.p.rapidapi.com'
         }
     };
-
     try {
         const response = await fetch(url, options);
         const result = await response.json();
-        title.innerText = result[0].title;
-        videoContainer.appendChild(iframe);
-        desc.innerText = result[0].description;
+        console.log(result.length);
+        loader.classList.add('container-none');
+        if(result.length == 1){
+            title.innerText = result[0].title;
+            videoContainer.appendChild(iframe);
+            desc.innerText = result[0].description;
+        }
+        else{
+            title.innerText = result.error;
+        }
         console.log(result);
         link.value = '';
     } catch (error) {
+        title.innerText = error;
         console.error(error);
     }
 }
