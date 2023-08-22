@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Transcriptor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="search">
+        <input type="text" class="input-field" placeholder="Search" id="input-field">
+        <button class="btn" id="btn" onclick="yt()">Search</button>
+    </div>
+    <div class="container">
+        <div class="title">
+            <span class="vid-title" id="vid-title"></span>
+        </div>
+        <div class="video-details">
+            <div id="video-container"></div>
+            <span class="vid-desc" id="vid-desc"></span>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>

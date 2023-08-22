@@ -1,0 +1,75 @@
+body{
+    background-color: rgb(49, 49, 49);
+}
+
+.search{
+    display: flex;
+    width: 700px;
+    margin: 32px auto;
+}
+
+.input-field{
+    border-radius: 12px 0 0 12px;
+    color: white;
+    width: 90%;
+    padding: 16px;
+    border: none;
+    font-size: 18px;
+    background-color: rgba(96, 96, 96, 0.297);
+}
+
+.input-field:focus{
+    outline: none;
+    border: none;
+}
+
+.btn{
+    cursor: pointer;
+    border-radius: 0 12px 12px 0;
+    border: none;
+    background-color: red;
+    color: white;
+    padding: 16px 30px;
+    font-size: 16px;
+    border: none;
+}
+
+.container{
+    width: 720px;
+    margin: 10px auto;
+}
+
+.vid-title{
+    display: flex;
+    font-size: 24px;
+    color: white;
+    font-weight: 700;
+    justify-content: center;
+}
+
+#video-container {
+    max-width: 560px; /* Set the maximum width */
+    margin: 0 auto; /* Center the video */
+    margin-bottom: 30px;
+}
+
+#video-container iframe {
+    width: 560px; /* Make the iframe responsive to its container */
+    height: 315px; /* Set the desired height */
+    border: none; /* Remove the border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.video-details{
+    margin-top: 20px;
+    height: 75vh;
+    overflow: scroll;
+}
+
+.video-details::-webkit-scrollbar{
+    display: none;
+}
+
+.vid-desc{
+    color: white;
+}
